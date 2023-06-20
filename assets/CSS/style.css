@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Signika Negative', sans-serif;
+    color: #677ce6;
+    background-color: white;
+    font-size: calc(15px + 0.4vw);
+}
