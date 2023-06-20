@@ -9,33 +9,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika+Negative&display=swap" rel="stylesheet"> 
 
-    
+
     <link rel="stylesheet" href="assets/CSS/style.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
     <!-- possibly add emojis for header -->
     <header> 
-        <h1>Rock Paper Scissors</h1>
+        <h1>✊ ✋ ✌️</h1>
     </header>
     <main>
         <!-- Game Instructions and Choose Game Mode button -->
         <section>
-            <div>
-                <h2> Welcome to Rock Paper Scissors</h2>
-                <p>
+            <div id="instruction-div">
+                <h2 id="welcome-message"> Welcome to Rock Paper Scissors</h2>
+                <p class="instructions" id="game-description">
                     This is the classic game of rock, paper, scissors. <br> 
                     Firstly, choose if you would like to play against a computer or a friend <br>
                     Secondly, choose how many rounds you would like to play best of 3, 5 or 7 <br>
                     Now the game starts! Choose between rock paper or scissors and see if you beat your opponent! <br>
-                    Rock beats Scissors<br>
-                    Scissors beats Paper <br>
-                    Paper beats Rock <br>
-                    
+                </p>
+                <hr>
+                <p class="instructions" id="game-rules">
+                    <span class="instruction-emoji"> ✊ </span> beats <span class="instruction-emoji"> ✌️ </span><br>
+                    <span class="instruction-emoji"> ✌️ </span> beats <span class="instruction-emoji"> ✋ </span><br>
+                    <span class="instruction-emoji"> ✋ </span> beats <span class="instruction-emoji"> ✊ </span><br>
                     Now that you understand the rules click on START GAME below and let the battle begin!
                 </p>
+                <button id="start-game">START GAME</button>
             </div>
-            <button id="start-game">START GAME</button>
+            
 
         </section>
         <!-- Game section that will be display none until game starts Also will contain score  -->

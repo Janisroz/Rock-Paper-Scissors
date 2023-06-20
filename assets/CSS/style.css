@@ -7,3 +7,47 @@
     background-color: white;
     font-size: calc(15px + 0.4vw);
 }
+
+/* Header */
+header{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+/* Game Instruction Section */
+
+#instruction-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#welcome-message{
+    font-weight: bolder;
+    margin: 4vh 0;
+    font-size: 2rem;
+}
+
+.instructions{
+    margin: auto 7vw 3vh;
+    font-size: 1.3rem;
+}
+
+hr{
+    border: #677ce6 solid;
+    width: 70vw;
+}
+
+#game-rules{
+    margin-top: 3vh;
+    line-height: 3rem;
+}
+
+.instruction-emoji{
+    font-size: 2rem;
+}
