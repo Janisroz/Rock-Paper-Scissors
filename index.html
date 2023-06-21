@@ -20,7 +20,7 @@
     </header>
     <main>
         <!-- Game Instructions and Choose Game Mode button -->
-        <section>
+        <section id="instruction-section">
             <div id="instruction-div">
                 <h2 id="welcome-message"> Welcome to Rock Paper Scissors</h2>
                 <p class="instructions" id="game-description">
@@ -73,6 +73,22 @@
         </section>
         <!-- Game section that will be display none until game starts Also will contain score  -->
         <section>
+            <div id=selection-div>
+                <h2 id="current-player">Player 1 make a selection</h2>
+                <button class="selection">✊</button>
+                <button class="selection">✋</button>
+                <button class="selection">✌️</button>
+            </div>
+            <div id="score-div">
+                <div>
+                    <h3 class="player-score-display">Player 1 Score</h3>
+                </div>
+                <div>
+                    <h3 class="player-score-display">Player 2 Score</h3>                
+                </div>
+                <div id="player1-score" class="player-score-display"></div>
+                <div id="player2-score" class="player-score-display"></div>
+            </div>
 
         </section>
     </main>

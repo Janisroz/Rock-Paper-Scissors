@@ -20,6 +20,10 @@ h1{
 
 /* Game Instruction Section */
 
+#instruction-section{
+    display: none;
+}
+
 #instruction-div{
     display: flex;
     flex-direction: column;
@@ -109,7 +113,6 @@ hr{
 
 .modal-heading{
     font-size: 2rem;
-    font-size: 1.5rem;
 }
 
 .rounds{
@@ -123,4 +126,41 @@ hr{
 
 #start-game{
     margin:5vh auto;
+}
+
+/* Game Section */
+#selection-div{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#current-player{
+    width: 100%;
+    font-size:3rem;
+}
+
+#score-div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.selection{
+    font-size: 5rem;
+    margin:3vw 5vw ;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.selection:hover{
+    transform: scale(1.2);
+     
+}
+
+.player-score-display{
+    font-size: 2.5rem;
+    width: 50vw;
 }
