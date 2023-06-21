@@ -56,8 +56,71 @@ hr{
     font-size: 1.8rem;
     border: #677ce6 0.3vw solid;
     background-color: cadetblue;
+
 }
 
-#choose-game:hover{
+.button:hover{
     cursor: pointer;
+}
+
+/* Modal & Backdrop*/
+.backdrop{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+    top: 0;
+    display: none;
+}
+#modal-pop-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: fixed;
+    width: 50vw;
+    left: 25%;
+    top:10vh;
+    display: none;
+}
+
+#player-select{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 48%);
+    grid-column-gap: 2%;
+    background-color: white;
+    width:50vw ;
+    height: 20vh;
+}
+
+.game-select{
+    cursor: pointer;
+    text-align: center;
+}
+
+#player-select p{
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.modal-heading{
+    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+.rounds{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.modal{
+    text-align: center;
+}
+
+#start-game{
+    margin:5vh auto;
 }
