@@ -36,9 +36,36 @@
                     <span class="instruction-emoji"> ✋ </span> beats <span class="instruction-emoji"> ✊ </span><br>
                     Now that you understand the rules click on START GAME below and let the battle begin!
                 </p>
-                <button id="start-game">START GAME</button>
+                <button id="choose-game" class="button">CHOOSE GAME</button>
             </div>
             
+
+        </section>
+        <!-- Modal popup section that will be display none until start game is clicked -->
+        <section>
+            <div>
+                <h2>
+                    Choose your Game type 
+                </h2>
+            </div>
+            <div>
+                <p>Player vs Player</p>
+            </div>
+            <div>
+                <p>Player vs Computer</p>
+            </div>
+            <div>
+                <h2> 
+                    How many rounds?
+                </h2>
+                <input type="radio" id="best-of-3" name="best-of-3" value="best-of-3">
+                <label for="best-of-3">Best of 3</label><br>
+                <input type="radio" id="best-of-5" name="best-of-5" value="best-of-5">
+                <label for="best-of-5">Best of 5</label><br>
+                <input type="radio" id="best-of-7" name="best-of-7" value="best-of-7">
+                <label for="best-of-7">Best of 7</label>  
+                <button id="start-game" class="button">START GAME</button>
+            </div>
 
         </section>
         <!-- Game section that will be display none until game starts Also will contain score  -->
