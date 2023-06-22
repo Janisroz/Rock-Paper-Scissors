@@ -49,13 +49,26 @@ function gameMode(){
         console.log(gameChoice)
     })
 
-    document.getElementById("start-game").addEventListener("click", startGame(gameChoice[0], gameChoice[1]))
+    document.getElementById("start-game").addEventListener("click", function () { 
+        startGame(gameChoice[0], gameChoice[1])
+    })
 }
 
 
 /**
  * Starts the game, firstly changes to the game screen and then the game begins 
  */
+function startGame(mode, rounds){
+    // remove the backdrop modal and instruction screens
+    let backdrop = document.getElementById("backdrop")
+    let modal = document.getElementById("modal-pop-up")
+    let startScreen = document.getElementById("instruction-section")
+    backdrop.style.display = 'none'
+    modal.style.display = 'none'
+    startScreen.style.display = 'none'
 
-
+    // Display the game screen
+    let game = document.getElementById("game-section")
+    game.style.display = 'block'
+}
 
