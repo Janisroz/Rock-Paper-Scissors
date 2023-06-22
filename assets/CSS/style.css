@@ -20,9 +20,9 @@ h1{
 
 /* Game Instruction Section */
 
-#instruction-section{
+/* #instruction-section{
     display: none;
-}
+} */
 
 #instruction-div{
     display: flex;
@@ -68,7 +68,7 @@ hr{
 }
 
 /* Modal & Backdrop*/
-.backdrop{
+#backdrop{
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -126,9 +126,14 @@ hr{
 
 #start-game{
     margin:5vh auto;
+    display: flex;
 }
 
 /* Game Section */
+#game-section{
+    display: none;
+}
+
 #selection-div{
     text-align: center;
     display: flex;
