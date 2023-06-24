@@ -1,3 +1,23 @@
+// objects of possible selections
+let selection = [
+    {
+        name: "rock",
+        emoji: "✊",
+        beats: "scissors"
+    },
+
+    {
+        name: "paper",
+        emoji: "✋",
+        beats: "rock"
+    },
+
+    {
+        name: "scissors",
+        emoji: "✌️",
+        beats: "paper"
+    }
+]
 
 
 // array to contain user inputs deciding what type of game mode they want
@@ -81,10 +101,10 @@ function startGame(mode, rounds){
     // Depending on the arguments of the function choose the game type
 
     if ( mode === "pvp"){
-        // pvp(rounds)
+        pvp(rounds)
         console.log("pvp")
     } else if (mode === "pvc") {
-        // pvc(rounds)
+        pvc(rounds)
         console.log("pvc")
     } else {
         alert(" please choose a game mode")
@@ -96,7 +116,18 @@ function startGame(mode, rounds){
  * @param {*} rounds 
  */
 function pvp(rounds) {
-
+    // choose the number of rounds 
+    let roundText = document.getElementById("nb-rounds")
+    console.log(roundText.innerText)
+    if (rounds === "best-of-3") {
+        roundText.innerText = "Best of 3"
+    }else if (rounds === "best-of-5") {
+        roundText.innerText = "Best of 5"
+    }else if (rounds === "best-of-7") {
+        roundText.innerText = "Best of 7"
+    }else {
+        alert("Please choose a actual number of rounds")
+    }
 
 }
 
@@ -105,5 +136,16 @@ function pvp(rounds) {
  * @param {} rounds 
  */
 function pvc(rounds) {
-
+    // choose the number of rounds 
+    let roundText = document.getElementById("nb-rounds")
+    console.log(roundText.innerText)
+    if (rounds === "best-of-3") {
+        roundText.innerText = "Best of 3"
+    }else if (rounds === "best-of-5") {
+        roundText.innerText = "Best of 5"
+    }else if (rounds === "best-of-7") {
+        roundText.innerText = "Best of 7"
+    }else {
+        alert("Please choose a actual number of rounds")
+    }
 }
