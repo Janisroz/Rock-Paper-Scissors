@@ -1,4 +1,8 @@
+
+
+// array to contain user inputs deciding what type of game mode they want
 let gameChoice = Array()
+
 // Start with opening the Modal pop-up
 document.getElementById("choose-game").addEventListener("click", function() {
     let backdrop = document.getElementById("backdrop")
@@ -55,8 +59,11 @@ function gameMode(){
 }
 
 
+
 /**
  * Starts the game, firstly changes to the game screen and then the game begins 
+ * @param {*} mode 
+ * @param {*} rounds 
  */
 function startGame(mode, rounds){
     // remove the backdrop modal and instruction screens
@@ -70,5 +77,33 @@ function startGame(mode, rounds){
     // Display the game screen
     let game = document.getElementById("game-section")
     game.style.display = 'block'
+
+    // Depending on the arguments of the function choose the game type
+
+    if ( mode === "pvp"){
+        // pvp(rounds)
+        console.log("pvp")
+    } else if (mode === "pvc") {
+        // pvc(rounds)
+        console.log("pvc")
+    } else {
+        alert(" please choose a game mode")
+    }
 }
 
+/**
+ * Player vs Player game mode
+ * @param {*} rounds 
+ */
+function pvp(rounds) {
+
+
+}
+
+/**
+ * Player vs Computer game mode 
+ * @param {} rounds 
+ */
+function pvc(rounds) {
+
+}
