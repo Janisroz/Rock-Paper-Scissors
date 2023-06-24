@@ -116,7 +116,7 @@ function startGame(mode, rounds){
  * @param {*} rounds 
  */
 function pvp(rounds) {
-    // choose the number of rounds 
+    // get the number of rounds 
     let roundText = document.getElementById("nb-rounds")
     console.log(roundText.innerText)
     if (rounds === "best-of-3") {
@@ -128,6 +128,8 @@ function pvp(rounds) {
     }else {
         alert("Please choose a actual number of rounds")
     }
+
+    // get the selection of players
 
 }
 
@@ -136,7 +138,7 @@ function pvp(rounds) {
  * @param {} rounds 
  */
 function pvc(rounds) {
-    // choose the number of rounds 
+    // get the number of rounds 
     let roundText = document.getElementById("nb-rounds")
     console.log(roundText.innerText)
     if (rounds === "best-of-3") {
@@ -149,5 +151,34 @@ function pvc(rounds) {
         alert("Please choose a actual number of rounds")
     }
 
-    
+    // listen for player choice and run playerChoice function to display and update score
+    let selectionButton = document.getElementsByClassName("selection")
+    for (i= 0; i < selectionButton.length; i++){
+        selectionButton[i].addEventListener("click", function(){
+            let selectionChoice = this.getAttribute("data-selection")
+            let pchoice = selection.find(selection =>selection.name === selectionChoice )
+            // console.log(pchoice)
+            playerChoice(pchoice)
+        })
+
+    }
+}
+
+/**
+ * Get players choce and display on screen then get computer choice
+ * @param {*} pchoice 
+ */
+function playerChoice(pchoice){
+    let pChoice = pchoice.emoji 
+    let displayPchoice = document.getElementById("player1-score")
+    displayPchoice.innerHTML = pChoice
+    computerChoice()
+}
+
+/**
+ * Randomley get computers choice
+ */
+function computerChoice() {
+    let randomNb = Math.floor(Math.random() *3)+1
+    console.log(randomNb)
 }

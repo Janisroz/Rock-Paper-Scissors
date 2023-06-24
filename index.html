@@ -77,17 +77,17 @@
                 <h2 id="current-player">Player 1 make a selection</h2>
                 <h3 id="nb-rounds">Best of 3</h3>
                 <div id="choice-div">
-                    <button class="selection">✊</button>
-                    <button class="selection">✋</button>
-                    <button class="selection">✌️</button>
+                    <button class="selection" data-selection="rock">✊</button>
+                    <button class="selection" data-selection="paper">✋</button>
+                    <button class="selection" data-selection="scissors">✌️</button>
                 </div>
             </div>
             <div id="score-div">
                 <div>
-                    <h3 class="player-score-display" id>Player 1 Score</h3>
+                    <h3 class="player-score-display" id>Player 1 Score <span id="p-score">0</span></h3>
                 </div>
                 <div>
-                    <h3 class="player-score-display">Compuer Score</h3>                
+                    <h3 class="player-score-display">Computer Score <span id="c-score">0</span></h3>                
                 </div>
                 <div id="player1-score" class="player-score-display"></div>
                 <div id="player2-score" class="player-score-display"></div>
