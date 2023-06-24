@@ -108,6 +108,7 @@ function startGame(mode, rounds){
         console.log("pvc")
     } else {
         alert(" please choose a game mode")
+        return startGame(mode, rounds)
     }
 }
 
@@ -156,29 +157,37 @@ function pvc(rounds) {
     for (i= 0; i < selectionButton.length; i++){
         selectionButton[i].addEventListener("click", function(){
             let selectionChoice = this.getAttribute("data-selection")
-            let pchoice = selection.find(selection =>selection.name === selectionChoice )
+            let pChoice = selection.find(selection =>selection.name === selectionChoice )
             // console.log(pchoice)
-            playerChoice(pchoice)
+            playerChoice(pChoice)
         })
 
     }
 }
 
 /**
- * Get players choce and display on screen then get computer choice
- * @param {*} pchoice 
+ * Get players choce and display on screen then get computer choice and run function to get winner 
+ * @param {*} pChoice 
  */
-function playerChoice(pchoice){
-    let pChoice = pchoice.emoji 
-    let displayPchoice = document.getElementById("player1-score")
-    displayPchoice.innerHTML = pChoice
-    computerChoice()
+function playerChoice(pChoice){
+    let playerChoice = pChoice.emoji 
+    console.log(playerChoice)
+    // let displayPchoice = document.getElementById("player1-score")
+    let cChoice = computerChoice()
+    console.log(cChoice)
 }
 
 /**
  * Randomley get computers choice
  */
 function computerChoice() {
-    let randomNb = Math.floor(Math.random() *3)+1
-    console.log(randomNb)
+    let randomNb = Math.floor(Math.random() *3)
+    let cChoice = selection[randomNb]
+    return cChoice
 }
+
+// let finalDiv = document.getElementById("cScore")
+//     let scoreDiv = document.createElement("div")
+//     scoreDiv.innerText = pChoice
+//     scoreDiv.classList.add("player-score-display")
+//     finalDiv.after(scoreDiv)
