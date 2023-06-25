@@ -101,84 +101,60 @@ function startGame(mode, rounds){
     // Depending on the arguments of the function choose the game type
 
     if ( mode === "pvp"){
-        pvp(rounds)
+        pvp()
         console.log("pvp")
     } else if (mode === "pvc") {
-        pvc(rounds)
+        pvc()
         console.log("pvc")
     } else {
         alert(" please choose a game mode")
         return startGame(mode, rounds)
     }
+
+       // get the number of rounds 
+       let roundText = document.getElementById("nb-rounds")
+       console.log(roundText.innerText)
+       if (rounds === "best-of-3") {
+           roundText.innerText = "Best of 3"
+       }else if (rounds === "best-of-5") {
+           roundText.innerText = "Best of 5"
+       }else if (rounds === "best-of-7") {
+           roundText.innerText = "Best of 7"
+       }else {
+           alert("Please choose a actual number of rounds")
+       }
 }
 
 /**
  * Player vs Player game mode
- * @param {*} rounds 
  */
-function pvp(rounds) {
-    // get the number of rounds 
-    let roundText = document.getElementById("nb-rounds")
-    console.log(roundText.innerText)
-    if (rounds === "best-of-3") {
-        roundText.innerText = "Best of 3"
-    }else if (rounds === "best-of-5") {
-        roundText.innerText = "Best of 5"
-    }else if (rounds === "best-of-7") {
-        roundText.innerText = "Best of 7"
-    }else {
-        alert("Please choose a actual number of rounds")
-    }
+function pvp() {
 
-    // get the selection of players
-
-}
+ }
 
 /**
  * Player vs Computer game mode 
- * @param {} rounds 
  */
-function pvc(rounds) {
-    // get the number of rounds 
-    let roundText = document.getElementById("nb-rounds")
-    console.log(roundText.innerText)
-    if (rounds === "best-of-3") {
-        roundText.innerText = "Best of 3"
-    }else if (rounds === "best-of-5") {
-        roundText.innerText = "Best of 5"
-    }else if (rounds === "best-of-7") {
-        roundText.innerText = "Best of 7"
-    }else {
-        alert("Please choose a actual number of rounds")
-    }
-
-    // listen for player choice and run playerChoice function to display and update score
+function pvc() {
+    // listen for player choice & get computer choice run checkwinner functions to decide winner
     let selectionButton = document.getElementsByClassName("selection")
     for (i= 0; i < selectionButton.length; i++){
         selectionButton[i].addEventListener("click", function(){
             let selectionChoice = this.getAttribute("data-selection")
             let pChoice = selection.find(selection =>selection.name === selectionChoice )
-            // console.log(pchoice)
-            playerChoice(pChoice)
+            let cChoice = computerChoice()
+            console.log(pChoice)
+            console.log(cChoice)
+            // checkWinnerPlayer2(cChoice, pChoice)
+            checkWinnerPlayer1(pChoice, cChoice)
+            
         })
 
     }
 }
 
 /**
- * Get players choce and display on screen then get computer choice and run function to get winner 
- * @param {*} pChoice 
- */
-function playerChoice(pChoice){
-    let playerChoice = pChoice.emoji 
-    console.log(playerChoice)
-    // let displayPchoice = document.getElementById("player1-score")
-    let cChoice = computerChoice()
-    console.log(cChoice)
-}
-
-/**
- * Randomley get computers choice
+ * Randomly generate computers choice
  */
 function computerChoice() {
     let randomNb = Math.floor(Math.random() *3)
@@ -186,6 +162,48 @@ function computerChoice() {
     return cChoice
 }
 
+/**
+ * Check if player 1 won 
+ * @param {player 1 choice object} pChoice 
+ * @param {*player 2 or computer choice object} cChoice 
+ */
+function checkWinnerPlayer1(pChoice, cChoice){
+    if (cChoice.name === pChoice.beats){
+        // means player1 lost get emoji and insert into location 
+        let finalDiv = document.getElementById("cScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = pChoice.emoji
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
+    } else if (cChoice.name === pChoice.name) {
+        // means its a draw just add emoji into location 
+        let finalDiv = document.getElementById("cScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = pChoice.emoji
+        scoreDiv.style.fontSize = '1.5rem'
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
+
+    }else{
+        // means player 1 won emoji and insert into location add 1 to score
+        let finalDiv = document.getElementById("cScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = pChoice.emoji
+        scoreDiv.style.fontSize = '1.5rem'
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
+
+        // get p-score and add 1
+        let score = document.getElementById('p-score')
+        let scoreNb = score.innerHTML
+        console.log(scoreNb)
+        score.innerHTML = ++scoreNb
+
+    }
+
+}
+
+// code to display result emoji
 // let finalDiv = document.getElementById("cScore")
 //     let scoreDiv = document.createElement("div")
 //     scoreDiv.innerText = pChoice
