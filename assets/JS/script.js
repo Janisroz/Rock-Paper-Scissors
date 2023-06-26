@@ -128,9 +128,54 @@ function startGame(mode, rounds){
 /**
  * Player vs Player game mode
  */
-function pvp() {
+ function pvp() {
+    let playerPlaceholder = document.getElementById("current-player")
+        playerPlaceholder.innerText = "Player 1 make a selection"
+     // listen for player choice & get player 2 choice run checkwinner functions to decide winner
+    let selectionButton = document.getElementsByClassName("selection")
+    for (i= 0; i < selectionButton.length; i++){
+        selectionButton[i].addEventListener("click", function cChoice(){
+            let selectionChoice = this.getAttribute("data-selection")
+            let pChoice = selection.find(selection =>selection.name === selectionChoice )
 
- }
+            // change top text to Player 2
+        playerPlaceholder.innerText = "Player 2 make a selection"
+
+            for (i= 0; i < selectionButton.length; i++){
+                selectionButton[i].addEventListener("click", function cChoice(){
+                    let selectionChoice = this.getAttribute("data-selection")
+                    let cChoice = selection.find(selection =>selection.name === selectionChoice )
+                    console.log(pChoice)
+                    console.log(cChoice)
+                    checkWinnerPlayer2(cChoice, pChoice)
+                    checkWinnerPlayer1(pChoice, cChoice)
+                    pvp()
+                    }
+                )}
+            }
+        )}
+    }
+    
+
+/**
+ * Gets player 2 choice and returns it 
+ */
+function player2Choice() {
+    // change top text to Player 2
+    let player2Placeholder = document.getElementById("current-player")
+    player2Placeholder.innerText = "Player 2 make a selection"
+
+    let selectionButton = document.getElementsByClassName("selection")
+    for (i= 0; i < selectionButton.length; i++){
+        selectionButton[i].addEventListener("click", function(){
+            let selectionChoice = this.getAttribute("data-selection")
+            let cChoice = selection.find(selection =>selection.name === selectionChoice)
+            return cChoice
+
+    })}
+    console.log
+}
+
 
 /**
  * Player vs Computer game mode 
@@ -145,7 +190,7 @@ function pvc() {
             let cChoice = computerChoice()
             console.log(pChoice)
             console.log(cChoice)
-            // checkWinnerPlayer2(cChoice, pChoice)
+            checkWinnerPlayer2(cChoice, pChoice)
             checkWinnerPlayer1(pChoice, cChoice)
             
         })
@@ -169,27 +214,11 @@ function computerChoice() {
  */
 function checkWinnerPlayer1(pChoice, cChoice){
     if (cChoice.name === pChoice.beats){
-        // means player1 lost get emoji and insert into location 
-        let finalDiv = document.getElementById("cScore")
-        let scoreDiv = document.createElement("div")
-        scoreDiv.innerText = pChoice.emoji
-        scoreDiv.classList.add("player-score-display")
-        finalDiv.after(scoreDiv)
-    } else if (cChoice.name === pChoice.name) {
-        // means its a draw just add emoji into location 
-        let finalDiv = document.getElementById("cScore")
-        let scoreDiv = document.createElement("div")
-        scoreDiv.innerText = pChoice.emoji
-        scoreDiv.style.fontSize = '1.5rem'
-        scoreDiv.classList.add("player-score-display")
-        finalDiv.after(scoreDiv)
-
-    }else{
         // means player 1 won emoji and insert into location add 1 to score
-        let finalDiv = document.getElementById("cScore")
+        let finalDiv = document.getElementById("pScore")
         let scoreDiv = document.createElement("div")
         scoreDiv.innerText = pChoice.emoji
-        scoreDiv.style.fontSize = '1.5rem'
+        scoreDiv.style.fontSize = '4rem'
         scoreDiv.classList.add("player-score-display")
         finalDiv.after(scoreDiv)
 
@@ -198,14 +227,55 @@ function checkWinnerPlayer1(pChoice, cChoice){
         let scoreNb = score.innerHTML
         console.log(scoreNb)
         score.innerHTML = ++scoreNb
+    } else if (cChoice.name === pChoice.name) {
+        // means its a draw just add emoji into location 
+        let finalDiv = document.getElementById("pScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = pChoice.emoji
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
 
+    }else{
+        // means player1 lost get emoji and insert into location 
+        let finalDiv = document.getElementById("pScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = pChoice.emoji
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
     }
 
 }
 
-// code to display result emoji
-// let finalDiv = document.getElementById("cScore")
-//     let scoreDiv = document.createElement("div")
-//     scoreDiv.innerText = pChoice
-//     scoreDiv.classList.add("player-score-display")
-//     finalDiv.after(scoreDiv)
+function checkWinnerPlayer2(cChoice, pChoice) {
+    if (pChoice.name === cChoice.beats){
+        // means player 2 won emoji and insert into location add 1 to score
+        let finalDiv = document.getElementById("cScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = cChoice.emoji
+        scoreDiv.style.fontSize = '4rem'
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
+
+        // get c-score and add 1
+        let score = document.getElementById('c-score')
+        let scoreNb = score.innerHTML
+        console.log(scoreNb)
+        score.innerHTML = ++scoreNb
+
+    } else if (cChoice.name === pChoice.name) {
+        // means its a draw just add emoji into location 
+        let finalDiv = document.getElementById("cScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = cChoice.emoji
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
+    }else{
+        // means player2 lost get emoji and insert into location 
+        let finalDiv = document.getElementById("cScore")
+        let scoreDiv = document.createElement("div")
+        scoreDiv.innerText = cChoice.emoji
+        scoreDiv.classList.add("player-score-display")
+        finalDiv.after(scoreDiv)
+    }
+
+}
