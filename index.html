@@ -45,8 +45,8 @@
 
         </section>
         <!-- Modal popup section that will be display none until start game is clicked -->
-        <div id="backdrop"></div>
-        <section id="modal-pop-up">
+        <div class="backdrop" id="start-game-background"></div>
+        <section id="modal-pop-up" class = "modal-section">
             <div class="modal">
                 <h2 class="modal-heading">
                     Enter your name
@@ -91,7 +91,24 @@
                 <div id="player2-score" class="player-score-display"></div>
             </div>
         </section>
-    </main>
+        <!-- End Game Section that will be display none until game ends give option to restart or return home -->
+        <div class="backdrop" id="end-game-backdrop"></div>
+        <section id="end-game" class = "modal-section">
+            <div class="modal">
+                <h2 class="modal-heading">
+                    Congratulations <span id="player-name"></span>
+                </h2>
+                <p>
+                    You won with a score of <span id="winner-score"></span> to <span id="loser-score"></span>
+                </p>
+                <h2 class="modal-heading">
+                    Would you like to play again?
+                </h2>
+                <button  class="button">PLAY AGAIN</button>
+                <button  class="button">RETURN HOME</button>
+            </div>
+        </section>
+    </main> 
     <script src="assets/JS/script.js"></script>
 </body>
 

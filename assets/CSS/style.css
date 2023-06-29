@@ -68,7 +68,7 @@ hr{
 }
 
 /* Modal & Backdrop*/
-#backdrop{
+.backdrop{
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -78,7 +78,7 @@ hr{
     top: 0;
     display: none;
 }
-#modal-pop-up{
+.modal-section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,18 +87,15 @@ hr{
     width: 50vw;
     left: 25%;
     top:10vh;
+}
+
+
+#modal-pop-up{
     display: none;
 }
 
-#player-select{
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: repeat(2, 48%);
-    grid-column-gap: 2%;
-    background-color: white;
-    width:50vw ;
-    height: 20vh;
+#id {
+    border: black 1px;
 }
 
 .game-select{
@@ -182,3 +179,7 @@ hr{
     width: 50vw;
 }
 
+/* End Game pop-up */
+#end-game{
+    display: none;
+}

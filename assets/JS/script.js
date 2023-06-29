@@ -25,7 +25,7 @@ let gameChoice = ""
 
 // Start with opening the Modal pop-up
 document.getElementById("choose-game").addEventListener("click", function () {
-    let backdrop = document.getElementById("backdrop")
+    let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
     backdrop.style.display = 'block'
     modal.style.display = 'block'
@@ -33,8 +33,8 @@ document.getElementById("choose-game").addEventListener("click", function () {
 })
 
 // Allow user to click outside of the modal to close it
-document.getElementById("backdrop").addEventListener("click", function () {
-    let backdrop = document.getElementById("backdrop")
+document.getElementById("start-game-background").addEventListener("click", function () {
+    let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
     backdrop.style.display = 'none'
     modal.style.display = 'none'
@@ -67,7 +67,7 @@ function gameMode() {
  */
 function startGame(rounds) {
     // remove the backdrop modal and instruction screens
-    let backdrop = document.getElementById("backdrop")
+    let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
     let startScreen = document.getElementById("instruction-section")
     backdrop.style.display = 'none'
@@ -113,30 +113,6 @@ function pvc() {
             checkWinnerPlayer2(cChoice, pChoice)
             checkWinnerPlayer1(pChoice, cChoice)
             endGame()
-            // check the score of the players depending on the best of text ending game if score reached 
-            //     let rounds = document.getElementById("nb-rounds").innerText
-            //     let pScore = document.getElementById("p-score").innerText
-            //     console.log(pScore)
-            //     let cScore = document.getElementById("c-score").innerText
-            //     console.log(cScore)
-            //     if (rounds === "Best of 3"){
-            //         if (pScore || cScore === 2){
-            //             endGame()
-            //         }
-
-            //     }else if (rounds === "Best of 5"){
-            //         if (pScore || cScore === 2){
-            //             endGame()
-            //         }
-            //     }else if (rounds === "Best of 7"){
-            //         if (pScore || cScore === 2){
-            //             endGame()
-            //         }
-
-            //     }else {
-            //         gameMode()
-
-            //     }
         })
 
     }
@@ -147,7 +123,7 @@ function pvc() {
  * ends the game allowing user to restart the game or back to main screen
  */
 function endGame() {
-    // Get the results of Player & Computer and check who is winner 
+    // Get the results of Player & Computer and check who is winner and display end game modal 
     let pScore = document.getElementById("p-score").innerText
     console.log(pScore)
     let cScore = document.getElementById("c-score").innerText
@@ -155,11 +131,18 @@ function endGame() {
     let winner = ""
     if (pScore === "2" || pScore === "3" || pScore === "4") {
         winner = "Player 1 is the Winner";
+        endGameModal()
     } else if (cScore === "2" || cScore === "3" || cScore === "4") {
         winner = "Computer is the Winner";
+        endGameModal()
     }
     console.log(winner)
-    // Display modal that will congratulate the winner and allow player to return to main screen 
+    
+}
+
+function endGameModal(){
+    document.getElementById("end-game").style.display = "block"
+    document.getElementById("end-game-backdrop").style.display = "block"
 }
 
 /**
