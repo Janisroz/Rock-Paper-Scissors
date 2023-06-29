@@ -112,27 +112,54 @@ function pvc() {
             console.log(cChoice)
             checkWinnerPlayer2(cChoice, pChoice)
             checkWinnerPlayer1(pChoice, cChoice)
+            endGame()
+            // check the score of the players depending on the best of text ending game if score reached 
+            //     let rounds = document.getElementById("nb-rounds").innerText
+            //     let pScore = document.getElementById("p-score").innerText
+            //     console.log(pScore)
+            //     let cScore = document.getElementById("c-score").innerText
+            //     console.log(cScore)
+            //     if (rounds === "Best of 3"){
+            //         if (pScore || cScore === 2){
+            //             endGame()
+            //         }
 
-        // check the score of the players depending on the best of text ending game if score reached 
-        let rounds = document.getElementById("nb-rounds").innerText
-        let pScore = document.getElementById("p-score").innerText
-        console.log(pScore)
-        let cScore = document.getElementById("c-score").innerText
-        if (rounds === "Best of 3"){
-            if (pScore || cScore === 2){}
+            //     }else if (rounds === "Best of 5"){
+            //         if (pScore || cScore === 2){
+            //             endGame()
+            //         }
+            //     }else if (rounds === "Best of 7"){
+            //         if (pScore || cScore === 2){
+            //             endGame()
+            //         }
 
-        }else if (rounds === "Best of 5"){
+            //     }else {
+            //         gameMode()
 
-        }else if (rounds === "Best of 7"){
-
-        }else {
-
-        }
-        
-
+            //     }
         })
 
     }
+
+}
+
+/**
+ * ends the game allowing user to restart the game or back to main screen
+ */
+function endGame() {
+    // Get the results of Player & Computer and check who is winner 
+    let pScore = document.getElementById("p-score").innerText
+    console.log(pScore)
+    let cScore = document.getElementById("c-score").innerText
+    console.log(cScore)
+    let winner = ""
+    if (pScore === "2" || pScore === "3" || pScore === "4") {
+        winner = "Player 1 is the Winner";
+    } else if (cScore === "2" || cScore === "3" || cScore === "4") {
+        winner = "Computer is the Winner";
+    }
+    console.log(winner)
+    // Display modal that will congratulate the winner and allow player to return to main screen 
 }
 
 /**
@@ -196,7 +223,6 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         // get c-score and add 1
         let score = document.getElementById('c-score')
         let scoreNb = score.innerHTML
-        console.log(scoreNb)
         score.innerHTML = ++scoreNb
 
     } else if (cChoice.name === pChoice.name) {
@@ -216,3 +242,4 @@ function checkWinnerPlayer2(cChoice, pChoice) {
     }
 
 }
+

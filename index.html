@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,17 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika+Negative&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Signika+Negative&display=swap"
+        rel="stylesheet">
 
 
     <link rel="stylesheet" href="assets/CSS/style.css">
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
     <!-- possibly add emojis for header -->
-    <header> 
+    <header>
         <h1>✊ ✋ ✌️</h1>
     </header>
     <main>
@@ -24,7 +27,7 @@
             <div id="instruction-div">
                 <h2 id="welcome-message"> Welcome to Rock Paper Scissors</h2>
                 <p class="instructions" id="game-description">
-                    This is the classic game of rock, paper, scissors. <br> 
+                    This is the classic game of rock, paper, scissors. <br>
                     Firstly, choose if you would like to play against a computer or a friend <br>
                     Secondly, choose how many rounds you would like to play best of 3, 5 or 7 <br>
                     Now the game starts! Choose between rock paper or scissors and see if you beat your opponent! <br>
@@ -38,7 +41,7 @@
                 </p>
                 <button id="choose-game" class="button">CHOOSE GAME</button>
             </div>
-            
+
 
         </section>
         <!-- Modal popup section that will be display none until start game is clicked -->
@@ -46,22 +49,22 @@
         <section id="modal-pop-up">
             <div class="modal">
                 <h2 class="modal-heading">
-                    Enter your name 
+                    Enter your name
                 </h2>
             </div>
             <div id="name-input">
-                <input type="text" id="name" >
+                <input type="text" id="name">
             </div>
             <div class="modal">
-                <h2 class="modal-heading"> 
+                <h2 class="modal-heading">
                     How many rounds?
                 </h2>
-                <input type="radio"  id="best-of-3" name="best-of" value="best-of-3">
+                <input type="radio" id="best-of-3" name="best-of" value="best-of-3">
                 <label for="best-of-3" class="rounds">Best of 3</label><br>
-                <input type="radio"  id="best-of-5" name="best-of" value="best-of-5">
+                <input type="radio" id="best-of-5" name="best-of" value="best-of-5">
                 <label for="best-of-5" class="rounds">Best of 5</label><br>
-                <input type="radio"  id="best-of-7" name="best-of" value="best-of-7">
-                <label for="best-of-7" class="rounds">Best of 7</label>  
+                <input type="radio" id="best-of-7" name="best-of" value="best-of-7">
+                <label for="best-of-7" class="rounds">Best of 7</label>
             </div>
             <button id="start-game" class="button">START GAME</button>
 
@@ -79,17 +82,17 @@
             </div>
             <div id="score-div">
                 <div>
-                    <h3 class="player-score-display" id="pScore" >Player 1 Score <span id="p-score">0</span></h3>
+                    <h3 class="player-score-display" id="pScore">Player 1 Score <span id="p-score">0</span></h3>
                 </div>
                 <div>
-                    <h3 class="player-score-display" id="cScore">Computer Score <span id="c-score">0</span></h3>                
+                    <h3 class="player-score-display" id="cScore">Computer Score <span id="c-score">0</span></h3>
                 </div>
                 <div id="player1-score" class="player-score-display"></div>
                 <div id="player2-score" class="player-score-display"></div>
             </div>
-
         </section>
     </main>
     <script src="assets/JS/script.js"></script>
 </body>
+
 </html>
