@@ -19,12 +19,12 @@ let selection = [
     }
 ]
 
-
-// string to contain user inputs deciding what type of game mode they want
-let gameChoice = ""
+// Define rounds and playerName for access at end of game 
+let rounds = ""
+let playerName = ""
 
 // Start with opening the Modal pop-up
-document.getElementById("choose-game").addEventListener("click", function modal () {
+document.getElementById("choose-game").addEventListener("click", function modal() {
     let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
     backdrop.style.display = 'block'
@@ -46,18 +46,17 @@ document.getElementById("start-game-background").addEventListener("click", funct
  */
 function gameMode() {
     // listen to the users choices to decide how many rounds to go for
-    let rounds = ""
+
     let roundSelect = document.getElementsByName("best-of")
     for (i = 0; i < roundSelect.length; i++)
         roundSelect[i].addEventListener("click", function () {
             rounds = this.getAttribute('value')
-            console.log(rounds)
         })
-    
+
 
     document.getElementById("start-game").addEventListener("click", function () {
-        let playerName = document.getElementById("name").value
-        if (playerName.trim().length > 0 && (rounds === "best-of-3" || rounds === "best-of-5" || rounds === "best-of-7")){
+        playerName = document.getElementById("name").value
+        if (playerName.trim().length > 0 && (rounds === "best-of-3" || rounds === "best-of-5" || rounds === "best-of-7")) {
             startGame(rounds, playerName)
         } else {
             alert("Please enter your name & choose a actual number of rounds")
@@ -72,6 +71,19 @@ function gameMode() {
  * @param {*} rounds 
  */
 function startGame(rounds, playerName) {
+    // hide endGame modal if restarting
+    document.getElementById("end-game").style.display = "none"
+    document.getElementById("end-game-backdrop").style.display = "none"
+
+    // Reset player score 
+    let prevPscore = document.getElementById("p-score");
+    prevPscore.innerText = "0";
+
+
+    // Reset computer score 
+    let computerScore = document.getElementById("c-score");
+    computerScore.innerText = "0";
+
     // remove the backdrop modal and instruction screens
     let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
@@ -115,21 +127,55 @@ function startGame(rounds, playerName) {
  * Player vs Computer game mode 
  */
 function pvc() {
+       // Clear prev player choice emojis
+       let pEmojis = document.getElementById("pScore");
+       let child = pEmojis.nextElementSibling;
+   
+       while (child !== null && child.tagName === 'DIV') {
+           let currentDiv = child;
+           child = currentDiv.nextElementSibling;
+           currentDiv.remove();
+       }
+   
+       // Clear prev computer choice emojis
+       let cEmojis = document.getElementById("cScore");
+       child = cEmojis.nextElementSibling;
+   
+       while (child !== null && child.tagName === 'DIV') {
+           currentDiv = child;
+           child = currentDiv.nextElementSibling;
+           currentDiv.remove();
+       }
+   
+       
+
     // listen for player choice & get computer choice run checkwinner functions to decide winner
     let selectionButton = document.getElementsByClassName("selection")
     for (i = 0; i < selectionButton.length; i++) {
         selectionButton[i].addEventListener("click", function () {
+            console.log("clicked")
             let selectionChoice = this.getAttribute("data-selection")
             let pChoice = selection.find(selection => selection.name === selectionChoice)
             let cChoice = computerChoice()
-            console.log(pChoice)
-            console.log(cChoice)
             checkWinnerPlayer2(cChoice, pChoice)
             checkWinnerPlayer1(pChoice, cChoice)
             endGame()
         })
 
     }
+
+    for (i = 0; i < selectionButton.length; i++) {
+        selectionButton[i].removeEventListener("click", function () {
+            console.log("clicked")
+            let selectionChoice = this.getAttribute("data-selection")
+            let pChoice = selection.find(selection => selection.name === selectionChoice)
+            let cChoice = computerChoice()
+            checkWinnerPlayer2(cChoice, pChoice)
+            checkWinnerPlayer1(pChoice, cChoice)
+            endGame()
+        })
+        
+}
 
 }
 
@@ -139,34 +185,29 @@ function pvc() {
 function endGame() {
     // Get the results of Player & Computer and check who is winner and display end game modal 
     let pScore = document.getElementById("p-score").innerText
-    console.log(pScore)
     let cScore = document.getElementById("c-score").innerText
-    console.log(cScore)
 
     // Get the best of text to see what score should be testing for 
     let nbRounds = document.getElementById("nb-rounds").innerText
-    
+
     let winner = ""
-    if (nbRounds === "Best of 3"){
-        if (pScore === "2" ) {
+    if (nbRounds === "Best of 3") {
+        if (pScore === "2") {
             winner = "Player";
             endGameModal(winner)
         } else if (cScore === "2") {
             winner = "Computer";
             endGameModal(winner)
         }
-        console.log(winner)
-    }else if(nbRounds === "Best of 5"){
-        if (pScore === "3" ) {
+    } else if (nbRounds === "Best of 5") {
+        if (pScore === "3") {
             winner = "Player";
             endGameModal(winner)
         } else if (cScore === "3") {
             winner = "Computer";
             endGameModal(winner)
         }
-        console.log(winner)
-
-    }else if(nbRounds === "Best of 7"){
+    } else if (nbRounds === "Best of 7") {
         if (pScore === "4") {
             winner = "Player";
             endGameModal(winner)
@@ -174,19 +215,19 @@ function endGame() {
             winner = "Computer";
             endGameModal(winner)
         }
-        console.log(winner)
-
     }
 }
 
-function endGameModal(winner){
+function endGameModal(winner) {
+
+
     document.getElementById("end-game").style.display = "block"
     document.getElementById("end-game-backdrop").style.display = "block"
     // get winner name & Score and input into modal
     let winnerName = document.getElementById("winner-name")
     let playerName = document.getElementById("player-name")
-    console.log(winnerName)
-    if (winner === "Player"){
+    let pName = playerName.innerText
+    if (winner === "Player") {
         // insert winner name 
         winnerName.innerText = playerName.innerText
 
@@ -198,7 +239,7 @@ function endGameModal(winner){
         winnerSpan.innerText = winnerScore
         loserSpan.innerText = loserScore
 
-    }else if(winner === "Computer"){
+    } else if (winner === "Computer") {
         // insert winner name 
         winnerName.innerText = "Computer"
 
@@ -211,7 +252,57 @@ function endGameModal(winner){
         loserSpan.innerText = loserScore
     }
 
+
+    // Clear prev player choice emojis
+    let pEmojis = document.getElementById("pScore");
+    let child = pEmojis.nextElementSibling;
+
+    while (child !== null && child.tagName === 'DIV') {
+        let currentDiv = child;
+        child = currentDiv.nextElementSibling;
+        currentDiv.remove();
+    }
+
+    // Clear prev computer choice emojis
+    let cEmojis = document.getElementById("cScore");
+    child = cEmojis.nextElementSibling;
+
+    while (child !== null && child.tagName === 'DIV') {
+        currentDiv = child;
+        child = currentDiv.nextElementSibling;
+        currentDiv.remove();
+    }
+
+    // set up buttons to restart game or return to main screen
+    let playAgain = document.getElementById("play-again")
     
+    
+
+    playAgain.addEventListener("click", function () {
+        
+        let selectionButton = document.getElementsByClassName("selection")
+        
+    startGame(rounds, pName)
+    })
+
+    let homeScreen = document.getElementById("restart")
+    homeScreen.addEventListener("click", function () {
+        // let startScreen = document.getElementById("instruction-section")
+        // document.getElementById("end-game").style.display = "none"
+        // document.getElementById("end-game-backdrop").style.display = "none"
+        // startScreen.style.display = 'block'
+        // let game = document.getElementById("game-section")
+        // game.style.display = 'none'
+        // // clear prev name
+        // document.getElementById("name").value = ""
+        // // clear radio buttons 
+        // let roundSelection = document.getElementsByName("best-of")
+        // for (i = 0; i < roundSelection.length; i++) {
+        //     roundSelection[i].checked = false;
+        // }
+        location.reload()
+
+    })
 }
 
 /**
@@ -226,7 +317,7 @@ function computerChoice() {
 /**
  * Check if player 1 won 
  * @param {player 1 choice object} pChoice 
- * @param {*player 2 or computer choice object} cChoice 
+ * @param {*computer choice object} cChoice 
  */
 function checkWinnerPlayer1(pChoice, cChoice) {
     if (cChoice.name === pChoice.beats) {
@@ -262,6 +353,11 @@ function checkWinnerPlayer1(pChoice, cChoice) {
 
 }
 
+/**
+ * Checks if Computer won
+ * @param {Computer Choice} cChoice 
+ * @param {Player Choice} pChoice 
+ */
 function checkWinnerPlayer2(cChoice, pChoice) {
     if (pChoice.name === cChoice.beats) {
         // means player 2 won emoji and insert into location add 1 to score
@@ -275,6 +371,7 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         // get c-score and add 1
         let score = document.getElementById('c-score')
         let scoreNb = score.innerHTML
+        console.log(scoreNb)
         score.innerHTML = ++scoreNb
 
     } else if (cChoice.name === pChoice.name) {
