@@ -182,16 +182,36 @@ function endGame() {
 function endGameModal(winner){
     document.getElementById("end-game").style.display = "block"
     document.getElementById("end-game-backdrop").style.display = "block"
-    // get winner name and input into modal
+    // get winner name & Score and input into modal
     let winnerName = document.getElementById("winner-name")
+    let playerName = document.getElementById("player-name")
     console.log(winnerName)
     if (winner === "Player"){
-        let playerName = document.getElementById("player-name")
+        // insert winner name 
         winnerName.innerText = playerName.innerText
 
+        //insert winner score and the loser score
+        let winnerScore = document.getElementById("p-score").innerText
+        let loserScore = document.getElementById("c-score").innerText
+        let winnerSpan = document.getElementById("winner-score")
+        let loserSpan = document.getElementById("loser-score")
+        winnerSpan.innerText = winnerScore
+        loserSpan.innerText = loserScore
+
     }else if(winner === "Computer"){
+        // insert winner name 
         winnerName.innerText = "Computer"
+
+        //insert winner score and the loser score
+        let winnerScore = document.getElementById("c-score").innerText
+        let loserScore = document.getElementById("p-score").innerText
+        let winnerSpan = document.getElementById("winner-score")
+        let loserSpan = document.getElementById("loser-score")
+        winnerSpan.innerText = winnerScore
+        loserSpan.innerText = loserScore
     }
+
+    
 }
 
 /**
