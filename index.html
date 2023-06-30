@@ -72,7 +72,7 @@
         <!-- Game section that will be display none until game starts Also will contain score  -->
         <section id="game-section">
             <div id=selection-div>
-                <h2 id="current-player">Player 1 make a selection</h2>
+                <h2 id="current-player"><span id="player-name">Player 1</span> make a selection</h2>
                 <h3 id="nb-rounds">Best of 3</h3>
                 <div id="choice-div">
                     <button class="selection" data-selection="rock">✊</button>
@@ -96,7 +96,7 @@
         <section id="end-game" class = "modal-section">
             <div class="modal">
                 <h2 class="modal-heading">
-                    Congratulations <span id="player-name"></span>
+                    Congratulations <span id="winner-name"></span>
                 </h2>
                 <p>
                     You won with a score of <span id="winner-score"></span> to <span id="loser-score"></span>

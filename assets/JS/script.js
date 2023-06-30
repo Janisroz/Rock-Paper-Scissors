@@ -84,6 +84,14 @@ function startGame(rounds, playerName) {
     let game = document.getElementById("game-section")
     game.style.display = 'block'
 
+    // insert player name into player-name span
+    let playerNamePosition = document.getElementById("player-name")
+    playerNamePosition.innerText = playerName
+
+    // insert player name into score span
+    let playerScore = document.getElementById("pScore")
+    playerScore.innerHTML = `${playerName}'s Score <span id="p-score">0</span>`
+
     // run game function
     pvc()
 
@@ -141,39 +149,49 @@ function endGame() {
     let winner = ""
     if (nbRounds === "Best of 3"){
         if (pScore === "2" ) {
-            winner = "Player 1 is the Winner";
-            endGameModal()
+            winner = "Player";
+            endGameModal(winner)
         } else if (cScore === "2") {
-            winner = "Computer is the Winner";
-            endGameModal()
+            winner = "Computer";
+            endGameModal(winner)
         }
         console.log(winner)
     }else if(nbRounds === "Best of 5"){
         if (pScore === "3" ) {
-            winner = "Player 1 is the Winner";
-            endGameModal()
+            winner = "Player";
+            endGameModal(winner)
         } else if (cScore === "3") {
-            winner = "Computer is the Winner";
-            endGameModal()
+            winner = "Computer";
+            endGameModal(winner)
         }
         console.log(winner)
 
     }else if(nbRounds === "Best of 7"){
         if (pScore === "4") {
-            winner = "Player 1 is the Winner";
-            endGameModal()
+            winner = "Player";
+            endGameModal(winner)
         } else if (cScore === "4") {
-            winner = "Computer is the Winner";
-            endGameModal()
+            winner = "Computer";
+            endGameModal(winner)
         }
         console.log(winner)
 
     }
 }
 
-function endGameModal(){
+function endGameModal(winner){
     document.getElementById("end-game").style.display = "block"
     document.getElementById("end-game-backdrop").style.display = "block"
+    // get winner name and input into modal
+    let winnerName = document.getElementById("winner-name")
+    console.log(winnerName)
+    if (winner === "Player"){
+        let playerName = document.getElementById("player-name")
+        winnerName.innerText = playerName.innerText
+
+    }else if(winner === "Computer"){
+        winnerName.innerText = "Computer"
+    }
 }
 
 /**
