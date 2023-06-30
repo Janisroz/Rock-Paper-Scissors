@@ -134,16 +134,41 @@ function endGame() {
     console.log(pScore)
     let cScore = document.getElementById("c-score").innerText
     console.log(cScore)
-    let winner = ""
-    if (pScore === "2" || pScore === "3" || pScore === "4") {
-        winner = "Player 1 is the Winner";
-        endGameModal()
-    } else if (cScore === "2" || cScore === "3" || cScore === "4") {
-        winner = "Computer is the Winner";
-        endGameModal()
-    }
-    console.log(winner)
+
+    // Get the best of text to see what score should be testing for 
+    let nbRounds = document.getElementById("nb-rounds").innerText
     
+    let winner = ""
+    if (nbRounds === "Best of 3"){
+        if (pScore === "2" ) {
+            winner = "Player 1 is the Winner";
+            endGameModal()
+        } else if (cScore === "2") {
+            winner = "Computer is the Winner";
+            endGameModal()
+        }
+        console.log(winner)
+    }else if(nbRounds === "Best of 5"){
+        if (pScore === "3" ) {
+            winner = "Player 1 is the Winner";
+            endGameModal()
+        } else if (cScore === "3") {
+            winner = "Computer is the Winner";
+            endGameModal()
+        }
+        console.log(winner)
+
+    }else if(nbRounds === "Best of 7"){
+        if (pScore === "4") {
+            winner = "Player 1 is the Winner";
+            endGameModal()
+        } else if (cScore === "4") {
+            winner = "Computer is the Winner";
+            endGameModal()
+        }
+        console.log(winner)
+
+    }
 }
 
 function endGameModal(){
