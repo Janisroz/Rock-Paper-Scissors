@@ -94,8 +94,13 @@ hr{
     display: none;
 }
 
-#id {
-    border: black 1px;
+#name-input{
+    display: flex;
+    justify-content: center;
+}
+
+#name {
+    border: 4px solid black;
 }
 
 .game-select{

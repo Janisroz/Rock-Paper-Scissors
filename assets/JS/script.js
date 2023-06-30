@@ -20,11 +20,11 @@ let selection = [
 ]
 
 
-// array to contain user inputs deciding what type of game mode they want
+// string to contain user inputs deciding what type of game mode they want
 let gameChoice = ""
 
 // Start with opening the Modal pop-up
-document.getElementById("choose-game").addEventListener("click", function () {
+document.getElementById("choose-game").addEventListener("click", function modal () {
     let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
     backdrop.style.display = 'block'
@@ -42,7 +42,7 @@ document.getElementById("start-game-background").addEventListener("click", funct
 })
 
 /**
- * Allows user to choose what game and how long the game will be before starting game 
+ * Allows user to choose how long the game will be before starting game 
  */
 function gameMode() {
     // listen to the users choices to decide how many rounds to go for
@@ -53,9 +53,15 @@ function gameMode() {
             rounds = this.getAttribute('value')
             console.log(rounds)
         })
+    
 
     document.getElementById("start-game").addEventListener("click", function () {
-        startGame(rounds)
+        let playerName = document.getElementById("name").value
+        if (playerName.trim().length > 0 && (rounds === "best-of-3" || rounds === "best-of-5" || rounds === "best-of-7")){
+            startGame(rounds, playerName)
+        } else {
+            alert("Please enter your name & choose a actual number of rounds")
+        }
     })
 }
 
@@ -65,7 +71,7 @@ function gameMode() {
  * Starts the game, firstly changes to the game screen and then the game begins 
  * @param {*} rounds 
  */
-function startGame(rounds) {
+function startGame(rounds, playerName) {
     // remove the backdrop modal and instruction screens
     let backdrop = document.getElementById("start-game-background")
     let modal = document.getElementById("modal-pop-up")
@@ -78,7 +84,7 @@ function startGame(rounds) {
     let game = document.getElementById("game-section")
     game.style.display = 'block'
 
-    // Depending on the arguments of the function choose the game type
+    // run game function
     pvc()
 
     // get the number of rounds 
@@ -90,7 +96,7 @@ function startGame(rounds) {
     } else if (rounds === "best-of-7") {
         roundText.innerText = "Best of 7"
     } else {
-        alert("Please choose a actual number of rounds")
+        alert("No Rounds Selected defaulting to Best of 3")
     }
 
 
