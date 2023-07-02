@@ -89,7 +89,7 @@ function startGame(rounds, playerName) {
 
     // insert player name into score span
     let playerScore = document.getElementById("pScore");
-    playerScore.innerHTML = `${playerName}'s Score <span id="p-score">0</span>`;
+    playerScore.innerHTML = `${playerName}'s Score <span id="p-score" class="score">0</span>`;
 
     // run game function
     pvc();
@@ -197,25 +197,6 @@ function endGameModal(winner) {
     }
 
 
-    // Clear prev player choice emojis
-    let pEmojis = document.getElementById("pScore");
-    let child = pEmojis.nextElementSibling;
-
-    while (child !== null && child.tagName === 'DIV') {
-        let currentDiv = child;
-        child = currentDiv.nextElementSibling;
-        currentDiv.remove();
-    }
-
-    // Clear prev computer choice emojis
-    let cEmojis = document.getElementById("cScore");
-    child = cEmojis.nextElementSibling;
-
-    while (child !== null && child.tagName === 'DIV') {
-        let currentDiv = child;
-        child = currentDiv.nextElementSibling;
-        currentDiv.remove();
-    }
 
     // set up button to return to main screen
     let homeScreen = document.getElementById("restart");
@@ -245,6 +226,9 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = pChoice.emoji;
         scoreDiv.style.fontSize = '4rem';
+        scoreDiv.style.height = '10vh';
+        scoreDiv.style.textShadow = `0 0 1.2rem #f9ead3,
+        0 0 2rem currentColor`;
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
 
@@ -257,6 +241,7 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         // means its a draw just add emoji into location 
         let finalDiv = document.getElementById("pScore");
         let scoreDiv = document.createElement("div");
+        scoreDiv.style.height = '10vh';
         scoreDiv.innerText = pChoice.emoji;
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
@@ -266,6 +251,7 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         let finalDiv = document.getElementById("pScore");
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = pChoice.emoji;
+        scoreDiv.style.height = '10vh';
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
     }
@@ -284,6 +270,9 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = cChoice.emoji;
         scoreDiv.style.fontSize = '4rem';
+        scoreDiv.style.height = '10vh';
+        scoreDiv.style.textShadow = `0 0 1.2rem #f9ead3,
+        0 0 2rem currentColor`;
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
 
@@ -298,6 +287,7 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         let finalDiv = document.getElementById("cScore");
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = cChoice.emoji;
+        scoreDiv.style.height = '10vh';
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
     } else {
@@ -305,6 +295,7 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         let finalDiv = document.getElementById("cScore");
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = cChoice.emoji;
+        scoreDiv.style.height = '10vh';
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
     }
