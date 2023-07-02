@@ -3,68 +3,122 @@
     padding: 0;
     border: none;
     font-family: 'Signika Negative', sans-serif;
-    color: #677ce6;
+    color: #1c1127;
     background-color: white;
     font-size: calc(15px + 0.4vw);
+    font-weight: 700;
+}
+
+/* body */
+body{
+    background-image: radial-gradient(#fafbe1 , #f32a30, #bf3548, 
+    #1b122f );
+    min-height: 100vh;
 }
 
 /* Header */
 header{
     display: flex;
     justify-content: center;
+    background: transparent;
 }
 
 h1{
     font-size: 3rem;
+    background: transparent;
 }
 
 /* Game Instruction Section */
-
-/* #instruction-section{
-    display: none;
-} */
+main{
+    background: transparent;
+}
+#instruction-section{
+    background: transparent;
+}
 
 #instruction-div{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background: transparent;
 }
 
 #welcome-message{
+    background: transparent;
     font-weight: bolder;
-    margin: 4vh 0;
-    font-size: 2rem;
+    margin: 1vh 0 0;
+    animation: growth 3s;
+    animation-fill-mode: backwards;
+    font-size: 3rem;
+}
+@keyframes growth {
+  0% {
+    font-size: 0;
+  }
+  100% {
+    font-size: 3rem;
+  }
 }
 
+
+
 .instructions{
+    background: transparent;
     margin: auto 7vw 3vh;
     font-size: 1.3rem;
+    margin-top: 1vh;
+    line-height: 3rem;
 }
 
 hr{
-    border: #677ce6 solid;
+    border: #1c1127 solid;
     width: 70vw;
 }
 
 #game-rules{
-    margin-top: 3vh;
-    line-height: 3rem;
+    height: 12vh;
+    background: transparent;
+}
+
+#understand{
+    background: transparent;
+}
+
+p{
+    background: inherit;
 }
 
 .instruction-emoji{
     font-size: 2rem;
+    background: transparent;
+    animation: grow 3s infinite;
 }
 
-.button{
-    font-size: 1.8rem;
-    border: #677ce6 0.3vw solid;
-    background-color: cadetblue;
+@keyframes grow {
+    0% {
+      font-size: 1.8rem;
+    }
+    50% {
+      font-size: 2rem;
+    }
+    100% {
+        font-size: 1.8rem;
+      }
+  }
 
+.button{
+    font-size: 2em;
+    border: #211843 0.3vw solid;
+    background-color: #db2e6b;
+    padding: 0.5vh;
+    margin-bottom: 2vh;
 }
 
 .button:hover{
     cursor: pointer;
+    text-shadow: 0 0 0.5em #f9ead3,
+    0 0 1em currentColor;
 }
 
 /* Modal & Backdrop*/
@@ -78,7 +132,9 @@ hr{
     top: 0;
     display: none;
 }
+
 .modal-section{
+    background:transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,11 +148,14 @@ hr{
 
 #modal-pop-up{
     display: none;
+    background-image: radial-gradient(#fafbe1 , #f32a30, #bf3548, 
+    #1b122f );
 }
 
 #name-input{
     display: flex;
     justify-content: center;
+    background: transparent;
 }
 
 #name {
@@ -116,15 +175,18 @@ hr{
 
 .modal-heading{
     font-size: 2rem;
+    background: transparent;
 }
 
 .rounds{
     text-align: center;
     font-size: 1.5rem;
+    background: transparent;
 }
 
 .modal{
     text-align: center;
+    background: transparent;
 }
 
 #start-game{
