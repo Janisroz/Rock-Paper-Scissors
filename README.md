@@ -1,108 +1,118 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Introduction
 
-Welcome USER_NAME,
+Choose Your Faith is a web based game developed using HTML, CSS and Javascript. It is a basic game of Rock Paper Scissors and is aimed at users who are struggling to make a decision. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+View the live site [https://janisroz.github.io/Rock-Paper-Scissors/](https://janisroz.github.io/Rock-Paper-Scissors/).
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![A multi-device mockup of the Sweet Croí website](docs/images/multi-device-mockup.jpg)
 
-## Gitpod Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Site Wide
 
-`python3 -m http.server`
+- Nav Images
+    - The rock, paper and scissors emojis are displayed at the head of the site to immediately allow users to understand what the game is
 
-A blue button should appear to click: _Make Public_,
+![A image of the websites nav images](docs/images/nav-images.jpg)
 
-Another blue button should appear to click: _Open Browser_.
+- Central design
+    The page is designed in a central column that is centered and is where the JavaScript inserts values into the HTML
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Main Menu
 
-A blue button should appear to click: _Make Public_,
+This is the first page that the user will see upon landing the user is greeted with a growing animation of the heading "Choose Your Faith". The site is based around the idea of the user struggling to make a decision in their life. This game seeks to address this issue giving users a way to leave the decision in the hands of faith.
 
-Another blue button should appear to click: _Open Browser_.
+![A image of the websites main menu](docs/images/main-menu.jpg)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Introduction Section
+    - This section describes the premise of the game, explaining the point of the game and a brief description of what choices they will have regarding the game
 
-To log into the Heroku toolbelt CLI:
+- Instruction Section
+    - A visual approach was taken to explain the simple rules of the game 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+- Start Game Button
+    - Once the player is ready to play the user can click on the choose game button starting the game
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Start Game Modal
 
-------
+Modals are used throughout the site to navigate through the game sections and allows for data collection from the user in this section
 
-## Release History
+![A image of the websites start game modal](docs/images/start-game-modal.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Name Section
+    - This input section captures the users name, If there is no text entered the user will get an alert instructing them to insert their name
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- How Many Rounds 
+    - Radio buttons are utilized allowing users to select how many rounds they would like the game to last
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Start Game Button
+    - Once this is clicked and both radio and name sections are recorded the game will begin
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Game Section
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+This is where the main game takes place
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![A image of the websites start game modal](docs/images/game-screen.jpg)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- User make a selection
+    - This section uses JS to insert the users name into the User placeholder 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Best of 5
+    - The number of rounds are displayed using JS to insert the chosen number from the start game modal.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Rock Paper Scissors Buttons
+    - The user clicks on these buttons to make a selection of their choice 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- Score
+    - Player and computer score is updated dynamically using JS and previous choices and winners are displayed upon selection. Winners are highlighted by a glow and increase in size
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![A image of the games selection section](docs/images/previous-selections.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### End Game Modal
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+This section is displayed upon ending of the game 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![A image of the end game modal](docs/images/end-game-modal.jpg)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Congratulations User
+    - This section congratulates the winner of the game wether it is the user or computer
 
-------
+- Score section
+    - This section uses JS to display the final score
 
-## FAQ about the uptime script
+- Play Again Button
+    - This button sends the user back to the main page allowing them to play again
 
-**Why have you added this script?**
+## Existing Features
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Responsive design
+- Animations used for improved user experience
+- Recording of user inputs to choose game type
+- Main game and option to restart
 
-**How will this affect me?**
+## Features for Future Implementation
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- Option to play with a friend rather than just against the computer
+- A leaderboard could be implemented to allow users to compete against each other
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Testing
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Testing Strategy
 
-**So….?**
+Two methods of testing were implemented throughout the development of this website. The first was continuous testing that was carried out throughout the projects. This was utilized in both the JavaScript and also in the CSS. In the CSS testing was continuously performed in order to ensure all elements were as user friendly as possible and adhered to the design scheme. Continuous testing was especially important in the JavaScript and testing was constantly performed in order to ensure that the logic was being executed correctly and all functions were working how and when they were expected. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The second method of testing was a more formal approach in which the site was brought through validators and other tools in order to ensure all code was iplemented as efficiently and user friendly as possible.
 
-**Can I opt out?**
+### Validator Testing
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- HTML 
+    - No errors were found when passing through the official W3C Validator. [View the results here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjanisroz.github.io%2FRock-Paper-Scissors%2F)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- CSS
+    - No errors were returned when passing through the official W3C CSS Validation Service - Jigsaw. [View the results here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjanisroz.github.io%2FRock-Paper-Scissors%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-**Anything more?**
+- JavaScript 
+    - No errors were returned when passing through the validator service at JSHint.com.
+    ![A image of the results of JSHint.com](docs/images/js-testing.jpg)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+- Wave Accesibilty
