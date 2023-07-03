@@ -24,7 +24,7 @@ header{
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 2rem;
     background: transparent;
 }
 
@@ -50,14 +50,14 @@ main{
     margin: 1vh 0 0;
     animation: growth 3s;
     animation-fill-mode: backwards;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 @keyframes growth {
   0% {
     font-size: 0;
   }
   100% {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -65,10 +65,8 @@ main{
 
 .instructions{
     background: transparent;
-    margin: auto 7vw 3vh;
-    font-size: 1.3rem;
+    margin: auto 5vw;
     margin-top: 1vh;
-    line-height: 3rem;
 }
 
 hr{
@@ -97,22 +95,22 @@ p{
 
 @keyframes grow {
     0% {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
     }
     50% {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     100% {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
       }
   }
 
 .button{
-    font-size: 2em;
+    font-size: 1.5rem;
     border: #211843 0.3vw solid;
     background-color: #db2e6b;
     padding: 0.5vh;
-    margin-bottom: 2vh;
+    margin: 2vh;
 }
 
 .button:hover{
@@ -141,8 +139,8 @@ p{
     align-items: center;
     z-index: 1;
     position: fixed;
-    width: 50vw;
-    left: 25%;
+    width: 80vw;
+    left: 10vw;
     top:10vh;
 }
 
@@ -176,15 +174,14 @@ p{
 }
 
 .modal-heading{
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: transparent;
-    margin: 2vh;
-
+    margin: 2vh auto;
 }
 
 .rounds{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     background: transparent;
 }
 
@@ -194,7 +191,7 @@ p{
 }
 
 #start-game{
-    margin:5vh auto;
+    margin:1vh auto;
     display: flex;
 }
 
@@ -216,11 +213,13 @@ p{
     justify-content: center;
     flex-direction: column;
     background: transparent;
+    align-content: center;
+    align-items: center;
 }
 
 #current-player{
     width: 100%;
-    font-size:3rem;
+    font-size:1.5rem;
     background: transparent;
 }
 
@@ -231,7 +230,7 @@ p{
 
 #nb-rounds{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: transparent;
 }
 
@@ -256,7 +255,7 @@ p{
 }
 
 .selection{
-    font-size: 5rem;
+    font-size: 3rem;
     margin:3vw 5vw ;
     cursor: pointer;
     transition: 100ms;
@@ -272,7 +271,7 @@ p{
 
 .player-score-display{
     display: flex;
-    font-size: 2.5rem;
+    margin-top: 3vh;
     background: transparent;
     align-items: center;
     align-content: center;

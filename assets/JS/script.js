@@ -226,7 +226,7 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = pChoice.emoji;
         scoreDiv.style.fontSize = '4rem';
-        scoreDiv.style.height = '10vh';
+        scoreDiv.style.height = '5vh';
         scoreDiv.style.textShadow = `0 0 1.2rem #f9ead3,
         0 0 2rem currentColor`;
         scoreDiv.classList.add("player-score-display");
@@ -241,7 +241,8 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         // means its a draw just add emoji into location 
         let finalDiv = document.getElementById("pScore");
         let scoreDiv = document.createElement("div");
-        scoreDiv.style.height = '10vh';
+        scoreDiv.style.height = '5vh';
+        scoreDiv.style.fontSize = '2rem';
         scoreDiv.innerText = pChoice.emoji;
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
@@ -251,7 +252,8 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         let finalDiv = document.getElementById("pScore");
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = pChoice.emoji;
-        scoreDiv.style.height = '10vh';
+        scoreDiv.style.fontSize = '2rem';
+        scoreDiv.style.height = '5vh';
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
     }
@@ -270,7 +272,7 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = cChoice.emoji;
         scoreDiv.style.fontSize = '4rem';
-        scoreDiv.style.height = '10vh';
+        scoreDiv.style.height = '5vh';
         scoreDiv.style.textShadow = `0 0 1.2rem #f9ead3,
         0 0 2rem currentColor`;
         scoreDiv.classList.add("player-score-display");
@@ -287,7 +289,8 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         let finalDiv = document.getElementById("cScore");
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = cChoice.emoji;
-        scoreDiv.style.height = '10vh';
+        scoreDiv.style.fontSize = '2rem';
+        scoreDiv.style.height = '5vh';
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
     } else {
@@ -295,7 +298,8 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         let finalDiv = document.getElementById("cScore");
         let scoreDiv = document.createElement("div");
         scoreDiv.innerText = cChoice.emoji;
-        scoreDiv.style.height = '10vh';
+        scoreDiv.style.fontSize = '2rem';
+        scoreDiv.style.height = '5vh';
         scoreDiv.classList.add("player-score-display");
         finalDiv.after(scoreDiv);
     }
