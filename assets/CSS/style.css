@@ -48,7 +48,7 @@ main{
     background: transparent;
     font-weight: bolder;
     margin: 1vh 0 0;
-    animation: growth 3s;
+    animation: growth 2s;
     animation-fill-mode: backwards;
     font-size: 2rem;
 }
@@ -64,7 +64,6 @@ main{
 
 
 .instructions{
-    background: transparent;
     margin: auto 5vw;
 }
 
@@ -80,6 +79,7 @@ hr{
 
 #understand{
     background: transparent;
+    margin-top: 3vh;
 }
 
 p{
@@ -87,7 +87,6 @@ p{
 }
 
 .instruction-emoji{
-    font-size: 1.5rem;
     background: transparent;
     animation: grow 3s infinite;
 }
