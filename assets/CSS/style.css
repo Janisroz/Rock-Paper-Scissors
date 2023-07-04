@@ -3,17 +3,15 @@
     padding: 0;
     border: none;
     font-family: 'Signika Negative', sans-serif;
-    color: #1c1127;
-    background-color: white;
+    color: white;
     font-size: calc(15px + 0.4vw);
     font-weight: 700;
 }
 
 /* body */
 body{
-    background-image: radial-gradient(#fafbe1 , #f32a30, #bf3548, 
-    #1b122f );
     min-height: 100vh;
+    background-color: #a8d0e6  ;
 }
 
 /* Header */
@@ -36,6 +34,12 @@ main{
     background: transparent;
 }
 
+#game-description{
+    background-color: #f86c6c;
+    border-radius: 8%;
+    margin-bottom: 2vh;
+}
+
 #instruction-div{
     display: flex;
     flex-direction: column;
@@ -45,9 +49,9 @@ main{
 }
 
 #welcome-message{
+    text-decoration: underline;
     background: transparent;
     font-weight: bolder;
-    margin: 1vh 0 0;
     animation: growth 2s;
     animation-fill-mode: backwards;
     font-size: 2rem;
@@ -65,21 +69,21 @@ main{
 
 .instructions{
     margin: auto 5vw;
-}
+    line-height: 1.7rem;
 
-hr{
-    border: #1c1127 solid;
-    width: 70vw;
 }
 
 #game-rules{
-    height: 14vh;
-    background: transparent;
+    padding: 2vh;
+    background-color: #f86c6c;
+    border-radius: 8%;
+    margin-bottom: 2vh;
 }
 
 #understand{
-    background: transparent;
-    margin-top: 3vh;
+    padding: 2vh;
+    background-color: #f86c6c;
+    border-radius: 8%;
 }
 
 p{
@@ -88,26 +92,17 @@ p{
 
 .instruction-emoji{
     background: transparent;
-    animation: grow 3s infinite;
+    font-size: 1.5rem;
+    text-shadow: 0 0 1.2rem #f9ead3,
+    0 0 2rem currentColor;
 }
 
-@keyframes grow {
-    0% {
-      font-size: 1.3rem;
-    }
-    50% {
-      font-size: 1.5rem;
-    }
-    100% {
-        font-size: 1.3rem;
-      }
-  }
-
 .button{
-    font-size: 1.5rem;
-    border: #211843 0.3vw solid;
-    background-color: #db2e6b;
+       font-size: 1.5rem;
+    border: #211843 3vw solid;
+    background-color: #24305e;
     padding: 0.5vh;
+    border-style: outset;
     margin: 2vh;
 }
 
@@ -130,23 +125,21 @@ p{
 }
 
 .modal-section{
-    background-image: radial-gradient(#fafbe1 , #f32a30, #bf3548, 
-    #1b122f );
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
     position: fixed;
     width: 80vw;
     left: 10vw;
-    top:10vh;
+    background: #f86c6c;
+    top: 10vh;
+    z-index: 1;
+    border-radius: 10%;
 }
 
 
+
 #modal-pop-up{
+    border-radius: 10%;
+    background: #f86c6c;
     display: none;
-    background-image: radial-gradient(#fafbe1 , #f32a30, #bf3548, 
-    #1b122f );
 }
 
 #name-input{
@@ -156,8 +149,8 @@ p{
 }
 
 #name {
-    border: 4px solid black;
     text-align: center;
+    color: black;
 }
 
 .game-select{
@@ -296,25 +289,6 @@ p{
     font-size: inherit;
 }
 
-/* Media Queries */
-/* for screens from 768px wide and up */
-@media screen and (min-width:768px) {
-    .instruction-emoji {
-        animation: grow 3s infinite;
-    }
-    @keyframes grow {
-        0% {
-            font-size: 1.5rem;
-        }
-        50% {
-            font-size: 2rem;
-        }
-        100% {
-            font-size: 1.5rem;
-        }
-    }
-    
-}
 
 /* Media Queries */
 /* for screens from 1024px wide and up */
