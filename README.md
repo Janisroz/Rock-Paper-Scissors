@@ -83,6 +83,12 @@ This section is displayed upon ending of the game
 - Play Again Button
     - This button sends the user back to the main page allowing them to play again
 
+### Favicon
+
+A favicon was created using [canva](https://www.canva.com/) to allow users to pick out the website when they have multiple tabs open 
+
+![A image of the favicon](docs/images/favicon.jpg)
+
 ## Existing Features
 
 - Responsive design
