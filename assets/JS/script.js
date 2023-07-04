@@ -116,7 +116,6 @@ function pvc() {
     let selectionButton = document.getElementsByClassName("selection");
     for (let i = 0; i < selectionButton.length; i++) {
         selectionButton[i].addEventListener("click", function playerSelect() {
-            console.log("clicked");
             let selectionChoice = this.getAttribute("data-selection");
             let pChoice = selection.find(selection => selection.name === selectionChoice);
             let cChoice = computerChoice();
@@ -235,7 +234,6 @@ function checkWinnerPlayer1(pChoice, cChoice) {
         // get p-score and add 1
         let score = document.getElementById('p-score');
         let scoreNb = score.innerHTML;
-        console.log(scoreNb);
         score.innerHTML = ++scoreNb;
     } else if (cChoice.name === pChoice.name) {
         // means its a draw just add emoji into location 
@@ -281,7 +279,6 @@ function checkWinnerPlayer2(cChoice, pChoice) {
         // get c-score and add 1
         let score = document.getElementById('c-score');
         let scoreNb = score.innerHTML;
-        console.log(scoreNb);
         score.innerHTML = ++scoreNb;
 
     } else if (cChoice.name === pChoice.name) {
