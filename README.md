@@ -70,7 +70,7 @@ This is where the main game takes place
 
 ### End Game Modal
 
-This section is displayed upon ending of the game 
+This section is displayed upon end of the game 
 
 ![A image of the end game modal](docs/images/end-game-modal.jpg)
 
@@ -101,13 +101,43 @@ A favicon was created using [canva](https://www.canva.com/) to allow users to pi
 - Option to play with a friend rather than just against the computer
 - A leaderboard could be implemented to allow users to compete against each other
 
+## Technologies
+
+- HTML
+    - Website structure and content was developed using HTML 
+
+- CSS
+    - Website styling, design and responsiveness was developed using CSS
+
+- FontsFree
+    - [https://fontsfree.net/](https://fontsfree.net/) was used to download the Signika Negative font that was used for the headings throughout the site
+
+- Favicon.io
+
+    - [https://favicon.io/](https://favicon.io/) was used to create the favicon image Code Anywhere
+
+- Code Anywhere
+    - Code Anywhere was used as the IDE to develop the website
+
+- GitHub
+    - GitHub was used to store the source code and also deploy the website on Git Pages
+
+- Git
+    - Was used to commit and push code throughout development
+
 ## Testing
 
 ### Testing Strategy
 
 Two methods of testing were implemented throughout the development of this website. The first was continuous testing that was carried out throughout the projects. This was utilized in both the JavaScript and also in the CSS. In the CSS testing was continuously performed in order to ensure all elements were as user friendly as possible and adhered to the design scheme. Continuous testing was especially important in the JavaScript and testing was constantly performed in order to ensure that the logic was being executed correctly and all functions were working how and when they were expected. 
 
-The second method of testing was a more formal approach in which the site was brought through validators and other tools in order to ensure all code was iplemented as efficiently and user friendly as possible.
+The second method of testing was a more formal approach in which the site was brought through validators and other tools in order to ensure all code was implemented as efficiently and user friendly as possible.
+
+### Responsiveness
+
+All stages of the website were constantly tested throughout development to ensure responsiveness was maintained throughout from the screen width of 280px and up. The site was tested on Chrome, Firefox and Opera browsers
+
+- The website was also tested across multiple mobile devices to ensure responsivity remained consistent throughout
 
 ### Validator Testing
 
@@ -122,3 +152,40 @@ The second method of testing was a more formal approach in which the site was br
     ![A image of the results of JSHint.com](docs/images/js-testing.jpg)
 
 - Wave Accesibilty
+    - No errors were returned when passing through the Wave web accesibility tool. [View the results here](https://wave.webaim.org/report#/https://janisroz.github.io/Rock-Paper-Scissors/)
+
+## Deployment
+
+### Version Control
+
+The website was created using the Code Anywhere IDE and was pushed to the github repository "rock-paper-scissors".
+
+Git commands were used to push code to the remote repositort:
+
+-`git add <file>` was used to add a file or multiple files to the staging area
+- `git commit -m "commit detail"` was used to commit changes to the local repository queue before being pushed to - github
+- `git push` was used to push all commited code and files to the repository on gihub
+
+### Deployment to Github Pages
+Github pages was used to deploy the website. Steps to deployment are as follows:
+
+- Click on the settings button within the required repo
+- Click on the "Pages" tab in the settings page in the menu on the left
+- Select "main" branch from the branch dropdown menu
+- Click "Save"
+- The link will appear at the top of the page once the website is deployed
+- The live website can be found here: https://janisroz.github.io/Rock-Paper-Scissors/
+
+### To Clone the Repository Code Locally
+- Begin in the required repository
+- Click on the green code drop down button and select local
+- Copy the repository link to the clipboard
+- Using an IDE with pre-installed git type git clone copied-git-url into the IDE terminal
+- The project will now be cloned on your IDE to use
+
+## Credits
+
+- favicon creation steps were taken from the DeeMc youtube channel- [favicon creation steps were taken from the DeeMc youtube channel- https://www.youtube.com/watch?v=W809I-d9xTg&ab_channel=DeeMc](https://www.youtube.com/watch?v=W809I-d9xTg&ab_channel=DeeMc)
+
+### Content
+- I created the favicon using [canva](https://www.canva.com/)
