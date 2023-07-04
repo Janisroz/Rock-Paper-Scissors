@@ -36,8 +36,9 @@ main{
 
 #game-description{
     background-color: #f86c6c;
-    border-radius: 8%;
+    border-radius: 18%;
     margin-bottom: 2vh;
+    padding: 5%;
 }
 
 #instruction-div{
@@ -76,14 +77,14 @@ main{
 #game-rules{
     padding: 2vh;
     background-color: #f86c6c;
-    border-radius: 8%;
+    border-radius: 18%;
     margin-bottom: 2vh;
 }
 
 #understand{
     padding: 2vh;
     background-color: #f86c6c;
-    border-radius: 8%;
+    border-radius: 18%;
 }
 
 p{
@@ -103,7 +104,11 @@ p{
     background-color: #24305e;
     padding: 0.5vh;
     border-style: outset;
-    margin: 2vh;
+    margin: 2vh auto;
+}
+
+#start-game{
+    display: flex;
 }
 
 .button:hover{
@@ -181,10 +186,8 @@ p{
     background: transparent;
 }
 
-#start-game{
-    margin:1vh auto;
-    display: flex;
-}
+
+
 
 /* Game Section */
 #game-section{
@@ -291,17 +294,26 @@ p{
 
 
 /* Media Queries */
-/* for screens from 1024px wide and up */
+/* for screens from 700px wide and up */
+@media screen and (min-width:700px) {
+    #game-description {
+        padding: 2%;
+    }
+
+    .button {
+        border-style: outset;
+        border: #211843 1vw solid;
+    }
+}
+
+/* for screens from 768px wide and up */
 @media screen and (min-width:768px) {
-    hr{
-        margin: 2vh auto;
+    .modal-section {
+        width: 50vw;
+        left: 25vw;
     }
 
     #welcome-message {
         margin: 1vh auto;
-    }
-
-    #game-description{
-        line-height: 1.rem;
     }
 }
