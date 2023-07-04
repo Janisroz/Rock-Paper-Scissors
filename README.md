@@ -133,6 +133,56 @@ Two methods of testing were implemented throughout the development of this websi
 
 The second method of testing was a more formal approach in which the site was brought through validators and other tools in order to ensure all code was implemented as efficiently and user friendly as possible.
 
+### Functional Testing
+
+This testing was carried out in order to ensure that the game ran as expected
+
+- On start game click 
+
+    - expected: start game modal to open 
+    - result: start game modal opens as expected
+
+- Clicking outside of start game modal
+
+    - expected: start game modal to close 
+    - result: start game modal closed as expected
+
+- Clicking Start Game with no inputs
+
+    - expected: alert appears to inform user that name and rounds must be selected
+    - result: alert appears
+
+- Clicking Start Game with only name no rounds selected
+
+    - expected: alert appears to inform user that name and rounds must be selected
+    - result: alert appears
+
+- Clicking Start Game with only rounds selected and  no name input
+
+    - expected: alert appears to inform user that name and rounds must be selected
+    - result: alert appears
+
+- Clicking Start Game with name input and rounds selected 
+
+    - expected: modal closes, game screen appears
+    - result: modal closes, game screen appears
+
+- Clicking on either rock paper or scissors input 
+
+    - expected: selection to display below the users score section and computers selection to display below the computers score section. The winner should have larger size and have a glow effect. The scores should update incrementing the winners score by one and not changing for the loser or in the case of a draw 
+    - result: all returned as expected
+
+- Reaching the score that the user chose 
+
+    - expected: when score is reached depending on the number of rounds selected the end game modal should appear informing the user of who won and the end score.
+    - result: end game modal is displayed and scores and winner are displayed correctly
+
+- Clicking on lets go button
+
+    - expected: page is reloaded and user is brought back to start screen allowing them to play again
+    - result: page reloads succesfully
+
+
 ### Responsiveness
 
 All stages of the website were constantly tested throughout development to ensure responsiveness was maintained throughout from the screen width of 280px and up. The site was tested on Chrome, Firefox and Opera browsers
@@ -149,6 +199,7 @@ All stages of the website were constantly tested throughout development to ensur
 
 - JavaScript 
     - No errors were returned when passing through the validator service at JSHint.com.
+    - Warnings were returned when looping through user input options as taught in the code institute content
     ![A image of the results of JSHint.com](docs/images/js-testing.jpg)
 
 - Wave Accesibilty
@@ -160,16 +211,17 @@ All stages of the website were constantly tested throughout development to ensur
 
 The website was created using the Code Anywhere IDE and was pushed to the github repository "rock-paper-scissors".
 
-Git commands were used to push code to the remote repositort:
+Git commands were used to push code to the remote repository:
 
--`git add <file>` was used to add a file or multiple files to the staging area
-- `git commit -m "commit detail"` was used to commit changes to the local repository queue before being pushed to - github
+- `git add <file>` was used to add a file or multiple files to the staging area
+- `git commit -m "commit detail"` was used to commit changes to the local repository queue before being pushed to github
 - `git push` was used to push all commited code and files to the repository on gihub
 
 ### Deployment to Github Pages
+
 Github pages was used to deploy the website. Steps to deployment are as follows:
 
-- Click on the settings button within the required repo
+- Click on the settings button within the required repository
 - Click on the "Pages" tab in the settings page in the menu on the left
 - Select "main" branch from the branch dropdown menu
 - Click "Save"
