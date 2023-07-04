@@ -83,6 +83,12 @@ This section is displayed upon end of the game
 - Play Again Button
     - This button sends the user back to the main page allowing them to play again
 
+### 404 Page
+
+- This page was implemented to ensure that if a user follows a broken link they will easily be able to navigate back to their required page without using browsers back button
+
+![A image of the 404 page](docs/images/404-page.jpg)
+
 ### Favicon
 
 A favicon was created using [canva](https://www.canva.com/) to allow users to pick out the website when they have multiple tabs open 
