@@ -293,6 +293,12 @@ p{
     font-size: inherit;
 }
 
+#fourofour{
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /* Media Queries */
 /* for screens from 700px wide and up */
